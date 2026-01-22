@@ -1,0 +1,54 @@
+body{
+    background-color: aliceblue;
+}
+
+.form{
+    border-radius: 10px;
+    display: flex;
+    justify-content: center; 
+    align-items: center;     
+    height: 100vh;
+}
+
+h1{
+    padding-right: 50px;
+}
+
+.error {
+    color: red;
+    font-size: 14px;
+    display: block;
+    margin-top: 4px;
+}
+
+.enclose{
+    background-color: rgb(148, 154, 154);
+    padding: 50px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center; 
+    align-items: center;  
+}
+
+.input{
+    width: 250px;
+    height: 25px;
+}
+#name_label{
+    padding-left: 80px;
+}
+
+#email_label{
+    padding-left: 100px;
+}
+
+#age_label{
+    padding-left: 110px;
+}
+
+#register{
+    height: 50px;
+    width: 80px;
+    justify-content: center;
+    margin-left: 80px;
+}
