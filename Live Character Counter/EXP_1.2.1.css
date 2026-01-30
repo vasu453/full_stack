@@ -1,0 +1,139 @@
+:root {
+  --max: 150;
+
+  --navy-1: #050b1a;
+  --navy-2: #0a1633;
+
+  --cyan: #4facfe;
+  --purple: #9b5cff;
+  --pink: #ff5fa2;
+  --yellow: #ffd166;
+  --red: #ff4d6d;
+
+  --glass: rgba(255, 255, 255, 0.06);
+  --border: rgba(255, 255, 255, 0.18);
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "Inter", system-ui, sans-serif;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(ellipse at 20% 50%, rgba(79, 172, 254, 0.15), transparent 50%),
+    radial-gradient(ellipse at 80% 80%, rgba(155, 92, 255, 0.12), transparent 50%),
+    radial-gradient(ellipse at 50% 0%, rgba(255, 95, 162, 0.1), transparent 60%),
+    linear-gradient(135deg, #0a0e27 0%, #1a1f3a 50%, #14224d 100%);
+  display: grid;
+  place-items: center;
+  color: #eaf2ff;
+}
+
+.container {
+  width: min(92%, 540px);
+}
+
+.label {
+  margin-bottom: 0.6rem;
+  display: block;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+
+  background: linear-gradient(90deg, var(--cyan), var(--purple), var(--pink));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.input-wrapper {
+  position: relative;
+  background: linear-gradient(
+    135deg,
+    rgba(255,255,255,0.08),
+    rgba(255,255,255,0.02)
+  );
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 1.2rem 1.2rem 2.5rem;
+  backdrop-filter: blur(18px);
+  box-shadow:
+    0 25px 60px rgba(0,0,0,0.55),
+    inset 0 0 0 1px rgba(255,255,255,0.04);
+  transition: 0.4s ease;
+}
+
+.input-wrapper:hover {
+  box-shadow:
+    0 30px 80px rgba(0,0,0,0.7),
+    0 0 30px rgba(79, 172, 254, 0.25);
+}
+
+textarea {
+  width: 100%;
+  resize: none;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #f4f8ff;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  min-height: 130px;
+  padding-right: 80px;
+  caret-color: var(--cyan);
+}
+
+textarea::placeholder {
+  color: rgba(200, 220, 255, 0.45);
+}
+
+.counter-box {
+  position: absolute;
+  bottom: 14px;
+  right: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--cyan);
+  text-shadow: 0 0 8px rgba(79, 172, 254, 0.6);
+}
+
+.progress-ring {
+  transform: rotate(-90deg);
+  filter: drop-shadow(0 0 6px rgba(79, 172, 254, 0.7));
+}
+
+circle {
+  fill: none;
+  stroke-width: 4;
+}
+
+circle.bg {
+  stroke: rgba(255,255,255,.15);
+}
+
+circle.progress {
+  stroke: var(--cyan);
+  stroke-linecap: round;
+  transition: stroke 0.4s ease, stroke-dashoffset 0.25s ease;
+}
+
+/* ⚠ Warning state */
+.input-wrapper.warn circle.progress,
+.input-wrapper.warn .counter-box {
+  color: var(--yellow);
+  stroke: var(--yellow);
+  text-shadow: 0 0 8px rgba(255, 209, 102, 0.7);
+}
+
+/* ❌ Danger state */
+.input-wrapper.danger circle.progress,
+.input-wrapper.danger .counter-box {
+  color: var(--red);
+  stroke: var(--red);
+  text-shadow: 0 0 10px rgba(255, 77, 109, 0.8);
+}

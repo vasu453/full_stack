@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Circles • Clean UI</title>
+  <link rel="stylesheet" href="EXP_1.2.3.css">
+</head>
+<body>
+  <main class="page">
+    <section class="card">
+      <header class="card-header">
+        <div class="swatch" aria-hidden="true"></div>
+        <button id="undoBtn" class="pill" aria-label="Undo last circle">Undo</button>
+      </header>
+
+      <div id="canvas" class="canvas" tabindex="0" aria-label="Drawing canvas">
+        <!-- Dots will be injected here -->
+      </div>
+
+      <footer class="card-footer">
+        <div class="count">Circles drawn: <span id="count">0</span></div>
+      </footer>
+    </section>
+  </main>
+
+  <script src="EXP_1.2.3.js"></script>
+</body>
+</html>
